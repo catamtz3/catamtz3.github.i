@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Uncomment if you want your page to NOT be indexed by search engines: -->
+  <!-- <meta name="robots" content="none"> -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Different Causes of Death in the US</title>
+
+  <!-- Uncomment if using d3: -->
+  <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+</head>
+
+<!------------------------------------------------------------>
+<!-- You are free to modify this template however you want! -->
+<!------------------------------------------------------------>
+
+<body>
+  <header>
+    <h1><a href=".">How were different states affected over various periods of the COVID-19 pandemic?"</a></h1>
+
+    <p>
+      <strong>Team Members</strong>: Qian, Rebecca; Winnick, Anna; Martinez, Catalina Atianna
+    </p>
+    <br>
+    <p>
+        <em>This visualization shows the weekly totals of new COVID-19 cases and deaths reported to the CDC from each state in the US from February 2020 to August 2022. Clicking and dragging on the first graph allows for the filtering of date ranges, which are reflected in the graphs below it. Toggling the dropdown menu changes the data displayed from COVID-19 cases to COVID-19 deaths.</em>
+    </p>
+  </header>
+
+  <main>
+    <p>
+      <!-- Visualization -->
+      <div id="observablehq-viewof-data_field-74c2d194"></div>
+      <div id="observablehq-graphs-74c2d194"></div>
+      <p>Credit: <a href="https://observablehq.com/d/37c92713b948d48a">United States COVID-19 Reported Cases and Deaths Over Time by Rebecca Qian, Anna Winnick, Cat Martinex</a></p>
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
+      <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/37c92713b948d48a@2883.js?v=3";
+      new Runtime().module(define, name => {
+        if (name === "viewof data_field") return new Inspector(document.querySelector("#observablehq-viewof-data_field-74c2d194"));
+        if (name === "graphs") return new Inspector(document.querySelector("#observablehq-graphs-74c2d194"));
+      });
+      </script>
+    </p>
+  </main>
+
+  <!-- If you put your rationale in your README, you can delete these two sections: -->
+
+  <section>
+    <h2>Design decisions</h2>
+    <p>
+      <em>Add a rationale for your design decisions.
+        How did you choose your particular visual encodings and interaction techniques?
+        What alternatives did you consider and how did you arrive at your ultimate choices?
+        How does your design help the viewer reach the intended conclusions?</em>
+    </p>
+    <p>
+      <!-- TODO: Rationale -->
+      Our group decided to create a visualization on the weekly updated United States COVID-19 dataset from the CDC because this pandemic data is something that still affects the population as a whole today. In the first graph at the top, we decided to plot the total sum of new COVID cases reported over each week from February 2020 as a line graph so that viewers could observe the changing number of cases reported over time. To add interactive elements for the audience, we added a brush filter to this graph to allow for the filtering of specific date ranges to narrow the scope of data for the next two graphs below it. We also added a tooltip to display the exact date and number of COVID cases/deaths. Since it is relatively difficult to hover over a point on the line, we added a hover bar that allows users to hover over any portion of the graph to display the tooltip corresponding to the x location of the mouse. The second graph depicts the total number of new COVID cases reported for each of the 50 states in the US. We chose a bar graph representation so that when the desired date range was selected from the line graph above, the second graph would update with the blue colored bars displaying data from the specific date range. As a result, viewers can compare bar heights between states and can compare to the lighter gray bars representing the total sum of cases over all of the dates reported. The last graph provides the audience with another form of comparison between the number of new cases reported between states. This graph is also controlled by the selection date range filter from the top graph, but is sorted in descending order so the viewer can easily determine which states had the highest and lowest reported new cases for certain time periods. Additionally, to add a color encoding, we created a color gradient legend on the top right of the graph to assign lower numbers of COVID cases (positive) to the color green and higher numbers of COVID cases (negative) to the color red, as viewers can intuitively associate those colors with their respective conclusions. Lastly, we created a dropdown menu at the very top of our visualization so that viewers can switch between viewing data for new reported COVID cases and viewing data for new reported COVID deaths.
+    </p><p>
+Some alternative visualization ideas that we had were to represent our data in the form of a scatter plot over a US map or to expand our visualization to look at data from other countries other than the US, but we found it difficult to find data that matched the specific locations of case origins within each state and were not able to find enough data from other countries to have an accurate and comprehensive representation. In terms of interactions, we also considered creating a zoomed in version of the cases over time data with the same brush filter, but determined that that feature was not as helpful to the audience as the state comparison bar graphs.
+
+    </p>
+  </section>
+
+  <section>
+    <h2>Development process</h2>
+    <p>
+      <em>Describe how the work was split among the team members.
+        Include a commentary on the development process, including answers to the following questions:
+        Roughly how much time did you spend developing your application (in person-hours)?
+        What aspects took the most time?</em>
+    </p>
+    <p>
+      <!-- TODO: Development Process -->
+      For our design process, our group decided to meet together to select which data we wanted to represent, to determine which language we wanted to use (deciding together on VegaLite), and to brainstorm ideas on what kind of features and visualizations we wanted to make. In terms of creating the visualization, we assigned certain features to individuals and communicated to each other if we had any modifications to make while working asynchronously. Learning the VegaLite syntax and figuring out which features were possible to achieve within the language were probably the most difficult parts of the project process, as it was a new platform to every member in our group and none of us had completed any previous project using VegaLite. The Observable notebooks shown in class proved to be a very helpful resource for us to learn from. We also assigned one group member to compose the writeup and another to deploy the visualization to Gitlab, but we all cross-collaborated to help each other with anything that we needed assistance with. Overall, the estimated number of hours our group spent on developing this application was about 20.
+
+    </p>
+  </section>
+
+  <section>
+    <h2>Other details</h2>
+    <p>
+      <em>Optional:
+        Add any other relevant information not shown in the visualization, such as a link to your dataset.</em>
+    </p>
+    <p>
+      <!-- Optional -->
+      <a href="https://data.cdc.gov/Case-Surveillance/Weekly-United-States-COVID-19-Cases-and-Deaths-by-/pwn4-m3yp">Dataset Link </a>
+      <br>
+      <a href="https://observablehq.com/d/37c92713b948d48a">Source Code</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="https://gitlab.cs.washington.edu/cse442-22au/a3/deathly">Code repository</a>
+      <br>
+      <a href="https://courses.cs.washington.edu/courses/cse442/22au/">CSE 442 Data Visualization</a>
+      <br>
+      <a href="https://www.washington.edu">University of Washington</a>
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
